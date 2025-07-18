@@ -1,0 +1,33 @@
+{
+  "environment": {
+    "obstacle_file": "data/input/colliders.csv",
+    "margin_of_safety": 5.0
+  },
+  "lattice": {
+    "center": [0, 0, 0],
+    "halfsizes": [50, 50, 50],
+    "resolution": 15.0,
+    "connectivity": "partial"
+  },
+  "astar": {
+    "start_gps": [-122.397450, 37.792480, 0.0],
+    "goal_gps": [-122.397230, 37.792895, 50.0]
+  },
+  "prm": {
+    "start_gps": [-122.39745, 37.79248, 0],
+    "goal_gps": [-122.39645,  37.79278, 200],
+    "density": 1e-5,
+    "neighbors": 5,
+    "visualization_bounds": [-100, 100, -100, 100, 0, 200]
+  },
+  "trajectory": {
+    "waypoints": [
+      [0, 0, 0], 
+      [20, 10, 10], 
+      [20, -20, 20], 
+      [30, 40, 10]
+    ],
+    "average_speed": 5.0,
+    "output_directory": "data/output/"
+  }
+}
