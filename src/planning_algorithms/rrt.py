@@ -1,8 +1,8 @@
 import numpy as np
 from scipy.spatial import KDTree
-from environment_data import EnvironmentData
-from lattice import CubicLattice
-from utils import global_to_local, collision_check_two_points, collision_check_vectorized, inside_environment
+from .environment_data import EnvironmentData
+from .lattice import CubicLattice
+from .utils import global_to_local, collision_check_two_points, collision_check_vectorized, inside_environment
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 

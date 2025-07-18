@@ -1,3 +1,9 @@
 # Integrated Motion Planning Demonstration
 
-This is a demonstration of a recent Python software tool I have created.
+This project demonstrates professional coding practice for a model and simulation in Python. 
+
+## Requirements
+These are the requirements and how to install them. 
+
+## Usage
+This is how you use the system. 

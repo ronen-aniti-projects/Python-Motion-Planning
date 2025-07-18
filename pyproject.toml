@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "planning_algorithms"
+version = "0.1.0"
+description = "Motion planning algorithms and simulations"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+  "numpy",
+  "matplotlib",
+  "utm",
+  "scipy",
+]
+
+[project.scripts]
+plan = "planning_algorithms.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
