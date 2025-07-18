@@ -1,13 +1,12 @@
-# main.py
 import numpy as np
 from pathlib import Path
 import json
-from planning_module.environment_data import EnvironmentData
-from planning_module.lattice import CubicLattice
-from planning_module.a_star_search import astar 
-from planning_module.utils import euclidean_distance
-from planning_module.prm import PRM
-from planning_module.trajectory import TrajectoryPlanner, Trajectory
+from .environment_data import EnvironmentData
+from .lattice import CubicLattice
+from .a_star_search import astar 
+from .utils import euclidean_distance
+from .prm import PRM
+from .trajectory import TrajectoryPlanner, Trajectory
 
 def run_obstacle_data(obstacle_file_path, margin_of_safety):
 	""""Demonstrates the obstacle data processing module
@@ -159,16 +158,10 @@ def run_full_mission(config):
 				average_speed=trajectory_config['average_speed'],
 				output_directory=trajectory_config['output_directory'])
 	
-	
-	
-	
-	
-	
-if __name__ == "__main__":
+def main():
 	
 	# Define the path to the configuration file
 	config_path = Path("config.json")
-	
 	
 	# Load the configuration from the JSON file 
 	try:
