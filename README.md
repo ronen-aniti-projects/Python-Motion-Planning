@@ -4,7 +4,14 @@ I have engineered a Python-based motion planning pipeline for quadcopters, imple
 In brief, this motion planning pipeline software tool takes as input a user-specified configuration (`config.json`) comprising obstacle data file, start and destination GPS coordinates, and various map-building and map-searching settings, then from that configuration computes both a waypoint plan (sequence of 3D positional coordinates) and a trajectory plan (time-ordered motion profile), with all generated output data being saved to `data/output`. 
 
 ## Setup
-It is recommended to use a virtual environment:
+
+First, clone the repository:
+```
+git clone https://github.com/ronen-aniti-projects/Python-Motion-Planning.git
+cd Python-Motion-Planning
+```
+
+Then, install the dependencies on your system. It is recommended to use a virtual environment:
 
 ```bash 
 python -m venv .venv
