@@ -164,7 +164,7 @@ Your choice:
 
 ```
 
-You specify waypoints in `config.json`, key `trajectory`, subkey `waypoints`. You also specify a heuristic speed (config subkey `average_speed`) that forces the profile to conform to a speed limit. 
+You specify waypoints in `config.json`, key `trajectory`, subkey `waypoints`. You also specify a heuristic speed (`config` subkey `average_speed`) that forces the profile to conform to a speed limit. 
 
 
 If trajectory generation is successful, then you'll see the trajectory plotted in 3D:
