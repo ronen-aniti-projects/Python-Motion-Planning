@@ -158,7 +158,7 @@ If the PRM build is successful, you'll also be shown a visualization of the wayp
 
 ![PRM Plan](docs/PRM_Plan.png)
 
-Controlling the PRM settings is a matter of modifying key `prm` in `config.json`. Parameters include a start and destination GPS coordinates, PRM mesh density, and PRM graph connectivity.
+Controlling the PRM settings is a matter of modifying key `prm` in `config.json`. Parameters include a start and destination GPS coordinates (`start_gps` and `goal_gps`), PRM mesh density (`density`), and PRM graph branching factor (`neighbors`).
 
 #### Prompt 6: Generate a trajectory
 Finally, you'll be prompted to generate a time-ordered trajectory profile between waypoints. 
