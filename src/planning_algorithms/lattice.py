@@ -287,20 +287,3 @@ class CubicLattice:
 
         plt.show()
 
-
-if __name__ == "__main__":
-    # Create an EnvironmentData object from the 'colliders.csv' file with a margin of safety of 5.0
-    ed_obj = EnvironmentData("data/input/colliders.csv", 5.0)
-
-    # Create a CubicLattice object, provided the specified center and bounding box dimensions of the volume to model
-    center = np.array([0, 0, 0])
-    halfsizes = np.array([50, 50, 50])
-    lattice_obj = CubicLattice(
-        ed_obj, center, halfsizes, resolution=15.0, connectivity="partial"
-    )
-
-    # Visualize the lattice
-    # Options: connectivity="full" or "partial":
-    # connectivity="full" creates a 26-connected lattice, where each point is connected to up to 26 neighbors of its neighbors
-    # connectivity="partial" creates a 6-connected lattice, where each point is connected to up to 6 neighbors
-    lattice_obj.visualize(ed_obj)

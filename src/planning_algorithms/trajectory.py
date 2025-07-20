@@ -798,38 +798,3 @@ class TrajectoryPlanner:
 
         return coeffs_dict
 
-
-if __name__ == "__main__":
-    # Define waypoints and create a trajectory
-    waypoints = [
-        (0, 0, 0),
-        (20, 10, 10),
-        (20, -20, 20),
-        (30, 40, 10),
-    ]  # Change waypoints here
-
-    # Create a TrajectoryPlanner object
-    planner = TrajectoryPlanner(waypoints)
-
-    # Allocate the time for the trajectory based on a desired average speed
-    planner.allocate_time(5)  # Change average speed here
-
-    # Compute the complete trajectory (returns a Trajectory object)
-    trajectory = planner.compute_complete_trajectory()
-
-    # Save the trajectory to files
-    print("Saving...")
-    trajectory.save_trajectory_to_files("../data/output/")
-    print("Save complete")
-
-    # Plot the trajectory
-    trajectory.plot_3d_trajectory()
-    trajectory.plot_velocity()
-    trajectory.plot_acceleration()
-    trajectory.plot_jerk()
-    trajectory.plot_snap()
-
-    # View the coefficients of the trajectory
-    print(trajectory.x_dict)
-    print(trajectory.y_dict)
-    print(trajectory.z_dict)
