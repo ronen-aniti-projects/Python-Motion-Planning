@@ -3,12 +3,6 @@ import pytest
 
 from planning_algorithms.environment_data import EnvironmentData
 
-
-@pytest.fixture
-def env_data(config):
-    env_config = config["environment"]
-    return EnvironmentData(env_config["obstacle_file"], env_config["margin_of_safety"])
-
 def test_home_lat_lon_properties(env_data):
     """
     Tests that the home latitude and home latitude are parsed correctly from the input file.
