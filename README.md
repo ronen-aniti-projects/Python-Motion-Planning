@@ -56,7 +56,7 @@ Configuration successfully loaded.
 ```
 
 #### Prompt 2: Load and visualize obstacle data
-After loading the configuration, you will be prompted to load the obstacle data file (`data/input/colliders.csv`). 
+After loading the configuration, you will be prompted to load the obstacle data file, `data/input/colliders.csv` by default, but you can point to your own with `config.json`, key `environment`, subkey `obstacle_file`. 
 
 ```
 --- Step 2: Load and visualize obstacle data ---
@@ -66,7 +66,7 @@ Your choice:
 
 ```
 
-If `colliders.csv` loads correctly, you will see summary obstacle metadata printed to the console, similar to this: 
+If the obstacle data loads correctly, you will see summary obstacle metadata printed to the console, similar to this: 
 
 ```
 Environment Data Summary:
@@ -102,12 +102,79 @@ You will also be presented with a Matplotlib 3D plot of the obstacle landscape:
 
 ![3D Obstacle Visualization](docs/3D_Obstacle_Visualization.png)
 
-#### Prompt 3: 
+#### Prompt 3: Construct a map of free-space
+Next, you'll be prompted to construct a graph representation of free space: 
 
 ```
---- Step 3: Construct a map of free space ---
+--- Step 3: Construct a map of free-space ---
 Press [D] to demonstrate the lattice construction module
 Press [E] to exit
 Your choice: 
 
 ```
+
+If the map construction is successful, you will see a 3D cubic lattice construction about the subvolume specified in `config.json`, key `lattice`, subkeys `center`, `halfsizes`. To change the construction's resolution or connectivity, modify subkeys `resolution`, and `connectivity` in `config.json`. Connectivity can either be `partial`, for a 6-connected lattice, or `full`, for a 26-connected lattice.
+
+![3D Lattice Construction](docs/3D_Lattice.png)
+
+#### Prompt 4: Search for an optimal plan with A*
+With the graph representation of free space constructed, the map is ready to be searched for routes. Your next prompt will be to execute the A* algorithm: 
+
+```
+--- Step 4: Search for a navigable route with A* ---
+Press [D] demonstrate the A* search module
+Press [E] to exit
+Your choice: 
+
+```
+The A* algorithm will search for a shortest-distance path—to the resolution of the free-space lattice graph—between the start and goal GPS coordinates specified in `config.json`, key `astar`, subkeys `start_gps` and `goal_gps`. 
+
+If a goal is found, you'll see the path visualized in 3D, with the path highlighted in orange, like so: 
+
+![A Star Path](docs/AStar.png)
+
+#### Prompt 5: Generate a Probabilistic Roadmap plan
+After generating an A* plan, you'll be prompted to build a probabilistic roadmap (a type of stochasticlly generated free-space map) and solve for a feasible path plan:
+
+```
+--- Step 5: Plan a path with PRM ---
+Press [D] to execute PRM and visualize the roadmap
+Press [E] to exit
+Your choice: 
+```
+
+Once the roadmap is generated, you'll see it visualized in 3D: 
+
+![PRM Construction](docs/PRM.png)
+
+If the PRM build is successful, you'll also be shown a visualization of the waypoint plan, highlighted in blue: 
+
+![PRM Plan](docs/PRM_Plan.png)
+
+Controlling the PRM settings is a matter of modifying key `prm` in `config.json`. Parameters include a start and destination GPS coordinates, PRM mesh density, and PRM graph connectivity.
+
+#### Prompt 6: Generate a trajectory
+Finally, you'll be prompted to generate a time-ordered trajectory profile between waypoints. 
+
+```
+--- Step 6: Generate a trajectory between waypoints ---
+Press [D] to generate and visualize trajectory
+Press [E] to exit
+Your choice: 
+
+```
+
+You specify waypoints in `config.json`, key `trajectory`, subkey `waypoints`. You also specify a heuristic speed (config subkey `average_speed`) that forces the profile to conform to a speed limit. 
+
+
+If trajectory generation is successful, then you'll see the trajectory plotted in 3D:
+
+![Trajectory](docs/Trajectory.png)
+
+You'll also see plots of velocity, acceleration, jerk, and snap, with position and velocity data being saved under `data/output/` as `x_position.csv`, `y_position.csv`, `z_position.csv`, `x_velocity.csv`, `y_velocity.csv`, and `z_velocity.csv`. 
+
+![Velocity](docs/Velocity.png)
+![Acceleration](docs/Acceleration.png)
+![Jerk](docs/Jerk.png)
+![Snap](docs/Snap.png)
+
