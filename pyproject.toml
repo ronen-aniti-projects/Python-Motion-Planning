@@ -20,3 +20,4 @@ plan = "planning_algorithms.main:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
