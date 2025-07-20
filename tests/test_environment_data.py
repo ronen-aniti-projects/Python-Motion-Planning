@@ -9,7 +9,6 @@ def env_data(config):
     env_config = config["environment"]
     return EnvironmentData(env_config["obstacle_file"], env_config["margin_of_safety"])
 
-
 def test_home_lat_lon_properties(env_data):
     """
     Tests that the home latitude and home latitude are parsed correctly from the input file.
@@ -19,3 +18,4 @@ def test_home_lat_lon_properties(env_data):
     expected_longitude = -122.39745
     assert env_data.home_latitude == pytest.approx(expected_latitude)
     assert env_data.home_longitude == pytest.approx(expected_longitude)
+
