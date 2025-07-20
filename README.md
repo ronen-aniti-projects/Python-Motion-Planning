@@ -39,14 +39,14 @@ The CLI will walk you through each module interactively. You will be prompted to
 4. Execute A* and PRM path planning. 
 5. Generate and visualize a trajectory.
 
-#### The welcome message
+### The welcome message
 On successful launch, the CLI will show a welcome message: 
 ```
 ========== WELCOME ========== 
 Welcome to a demonstration of Ronen Aniti's motion planning pipeline.
 ```
 
-#### Prompt 1: Load the configuration
+### Prompt 1: Load the configuration
 Initially, you will be prompted to load the configuration file.
 
 ```
@@ -62,7 +62,7 @@ If `config.json` loads correctly, you will see:
 Configuration successfully loaded.
 ```
 
-#### Prompt 2: Load and visualize obstacle data
+### Prompt 2: Load and visualize obstacle data
 After loading the configuration, you will be prompted to load the obstacle data file, `data/input/colliders.csv` by default, but you can point to your own with `config.json`, key `environment`, subkey `obstacle_file`. 
 
 ```
@@ -109,7 +109,7 @@ You will also be presented with a Matplotlib 3D plot of the obstacle landscape:
 
 ![3D Obstacle Visualization](docs/3D_Obstacle_Visualization.png)
 
-#### Prompt 3: Construct a map of free-space
+### Prompt 3: Construct a map of free-space
 Next, you'll be prompted to construct a graph representation of free space: 
 
 ```
@@ -124,7 +124,7 @@ If the map construction is successful, you will see a 3D cubic lattice construct
 
 ![3D Lattice Construction](docs/3D_Lattice.png)
 
-#### Prompt 4: Search for an optimal plan with A*
+### Prompt 4: Search for an optimal plan with A*
 With the graph representation of free space constructed, the map is ready to be searched for routes. Your next prompt will be to execute the A* algorithm: 
 
 ```
@@ -140,7 +140,7 @@ If a goal is found, you'll see the path visualized in 3D, with the path highligh
 
 ![A Star Path](docs/AStar.png)
 
-#### Prompt 5: Generate a Probabilistic Roadmap plan
+### Prompt 5: Generate a Probabilistic Roadmap plan
 After generating an A* plan, you'll be prompted to build a probabilistic roadmap (a type of stochasticlly generated free-space map) and solve for a feasible path plan:
 
 ```
@@ -160,7 +160,7 @@ If the PRM build is successful, you'll also be shown a visualization of the wayp
 
 Controlling the PRM settings is a matter of modifying key `prm` in `config.json`. Parameters include a start and destination GPS coordinates (`start_gps` and `goal_gps`), PRM mesh density (`density`), and PRM graph branching factor (`neighbors`).
 
-#### Prompt 6: Generate a trajectory
+### Prompt 6: Generate a trajectory
 Finally, you'll be prompted to generate a time-ordered trajectory profile between waypoints. 
 
 ```
