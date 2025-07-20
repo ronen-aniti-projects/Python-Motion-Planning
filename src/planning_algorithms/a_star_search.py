@@ -87,24 +87,3 @@ def astar(free_space_lattice_object, start_gps, goal_gps, h):
 
     return path
 
-
-if __name__ == "__main__":
-    # Construct a free space lattice with a safety margin of 5.0 m
-    env_data = EnvironmentData("data/input/colliders.csv", 5.0)
-
-    # Define the start and goal GPS positions
-    start_gps = np.array([-122.397450, 37.792480, 0.0])
-    goal_gps = np.array([-122.397230, 37.792895, 50.0])
-
-    # Create a free space lattice object
-    center = np.array([0, 0, 50])
-    halfsizes = np.array([50, 50, 50])
-    lattice_obj = CubicLattice(
-        env_data, center, halfsizes, resolution=25.0, connectivity="full"
-    )
-
-    # Perform A* search to find a path from the start to the goal position
-    path = astar(lattice_obj, start_gps, goal_gps, euclidean_distance)
-
-    # Visualize the path in the free space lattice
-    lattice_obj.visualize(env_data, path=path)
