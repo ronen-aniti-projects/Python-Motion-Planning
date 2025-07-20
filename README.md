@@ -20,7 +20,7 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-To launch the CLI:
+To launch the command-line interface (CLI):
 
 ```bash
 pip install -e .
@@ -40,7 +40,7 @@ The CLI will walk you through each module interactively. You will be prompted to
 5. Generate and visualize a trajectory.
 
 #### The welcome message
-On successfull launch, the CLI will show a welcome message: 
+On successful launch, the CLI will show a welcome message: 
 ```
 ========== WELCOME ========== 
 Welcome to a demonstration of Ronen Aniti's motion planning pipeline.
