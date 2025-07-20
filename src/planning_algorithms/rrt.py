@@ -376,32 +376,3 @@ class RRT:
 
         # Show the plot
         plt.show()
-
-
-if __name__ == "__main__":
-    # Create an EnvironmentData object
-    env_obj = EnvironmentData("../data/input/colliders.csv", 5.0)
-
-    # lon, lat, alt
-    start_gps = [-122.39741, 37.7911, 200]
-    goal_gps = [-122.39645, 37.7931, 50]
-
-    # Create an RRT object
-    rrt = RRT(
-        env_obj,
-        start_gps,
-        goal_gps,
-        GOAL_BIAS=0.7,
-        MAX_STEER_ANGLE_RATE=np.pi / 24,
-        TIME_STEP=0.1,
-        TIME_INTERVAL=5.0,
-        SPEED=2.0,
-        MAX_ITERATIONS=10000,
-        GOAL_TOLERANCE=1.0,
-    )
-
-    # Run the RRT algorithm
-    path = rrt.run()
-
-    # Visualize the RRT path
-    rrt.visualize(env_obj, path=path)
