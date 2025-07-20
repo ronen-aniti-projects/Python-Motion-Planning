@@ -7,6 +7,7 @@ name = "planning_algorithms"
 version = "0.1.0"
 description = "Motion planning algorithms and simulations"
 readme = "README.md"
+license = {text = "MIT"}
 requires-python = ">=3.8"
 dependencies = [
   "numpy",
