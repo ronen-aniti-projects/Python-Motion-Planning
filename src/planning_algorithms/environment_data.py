@@ -220,13 +220,3 @@ class EnvironmentData:
         """
         pass
 
-
-if __name__ == "__main__":
-    # Constructs an EnvironmentData object, parsing the obstacle data from 'colliders.csv' and setting the margin of safety to 5.0
-    enivronment_data = EnvironmentData("data/input/colliders.csv", 5.0)
-
-    # Prints a summary of the environment data key features
-    enivronment_data.summary()
-
-    # Visualizes the environment data in 3D
-    enivronment_data.visualize()
