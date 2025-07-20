@@ -98,7 +98,7 @@ def run_prm(
     roadmap = PRM(environment_data, DENSITY=density, NEIGHBORS=neighbors)
     print("\nGenerating 3D visualization....")
     roadmap.visualize(visualization_bounds)
-    print("\Searching PRM with A*...")
+    print("\nSearching PRM with A*...")
     prm_path = astar(roadmap, start_gps, goal_gps, euclidean_distance)
     print("\nGenerating 3D visualization....")
     roadmap.visualize(visualization_bounds, path=prm_path)
